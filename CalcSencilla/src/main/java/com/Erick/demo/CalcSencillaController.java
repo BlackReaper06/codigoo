@@ -25,5 +25,9 @@ public class CalcSencillaController {
         return "El resultado de la resta es... " + resultado;
     }
 
-
+    @GetMapping("/mul/{a}/{b}")
+    public String multiplicacion(@PathVariable int a, @PathVariable int b) {
+        int resultado = a * b;
+        return "El resultado de la multiplicacion es... " + resultado;
+    }
 }
