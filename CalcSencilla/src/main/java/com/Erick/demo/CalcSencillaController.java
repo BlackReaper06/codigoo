@@ -10,6 +10,20 @@ public class CalcSencillaController {
 
     @GetMapping("/")
     public String inicio() {
-        return "Calculadora sencilla con Spring Boot";
+        return "Calculadora sencilla solo sumas, restas y multiplicaciones";
     }
+    
+    @GetMapping("/sum/{a}/{b}")
+    public String suma(@PathVariable int a, @PathVariable int b) {
+        int resultado = a + b;
+        return "El resultado de la suma es... " + resultado;
+    }
+    
+    @GetMapping("/res/{a}/{b}")
+    public String resta(@PathVariable int a, @PathVariable int b) {
+        int resultado = a - b;
+        return "El resultado de la resta es... " + resultado;
+    }
+
+
 }
